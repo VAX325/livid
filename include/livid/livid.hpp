@@ -1007,6 +1007,12 @@ class Document final {
         head.call<void>("insertAdjacentHTML", std::string("beforeend"), link);
     }
 
+    static void add_css_element(const std::string &t) {
+        auto link = std::string("<style>") + t + "'<style/>";
+        auto head = doc_.call<emscripten::val>("getElementsByTagName", std::string("head"))[0];
+        head.call<void>("insertAdjacentHTML", std::string("beforeend"), link);
+    }
+
     /// Get all elements of the specified html className
     static std::vector<Widget> elems_by_class(const std::string &klass) {
         auto elems = doc_.call<emscripten::val>("getElementsByClassName", klass);

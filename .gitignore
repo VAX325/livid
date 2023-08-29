@@ -1,5 +1,13 @@
-index.html
-index.js
-index.wasm
-*.o
-bin
+# Folders
+build/**
+.vscode/**
+
+# File extensions
+**/.html
+**/*.js
+**/*.wasm
+**/*.o
+
+# Files
+
+!my_shell.html
